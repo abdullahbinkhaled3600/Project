@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+/* ROOT SCOPE */
+:host {
+  --primary: #5e6ad2;
+  --success: #2eb872;
+  --warning: #fca311;
+  --danger: #e63946;
+  --info: #3a86ff;
+
+  --bg: #f4f7f6;
+  --card: #ffffff;
+  --text: #2b2d42;
+  --muted: #8d99ae;
+
+  --radius: 15px;
+  --shadow: 0 4px 20px rgba(0,0,0,.05);
+  --transition: .3s ease;
+
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  display: block;
+}
+
+/* LAYOUT ROOT */
+.layout-root {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding-top: 20px;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.sidebar-brand {
+  padding: 0 25px 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 15px;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 10px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  gap: 15px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.sidebar-menu a.active,
+.sidebar-menu a:hover {
+  background: rgba(94,106,210,.1);
+  color: var(--primary);
+}
+
+.sidebar-menu a.text-danger {
+  color: var(--danger);
+}
+
+/* MAIN */
+.main-content {
+  margin-right: 280px;
+  padding: 25px;
+  transition: var(--transition);
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notif-btn {
+  position: relative;
+  background: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.notify-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background: var(--danger);
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* PAGE CONTENT */
+.page-content {
+  min-height: 300px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .sidebar {
+    right: -280px;
+  }
+
+  .sidebar.active {
+    right: 0;
+  }
+
+  .main-content {
+    margin-right: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

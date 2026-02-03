@@ -1,0 +1,43 @@
+/* CARD */
+.custom-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+
+/* NOTIFICATION ITEM */
+.notif-item {
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+
+.notif-item:hover {
+  background-color: #f8f9fa;
+}
+
+.notif-item.unread {
+  background-color: rgba(94,106,210,.04);
+  border-right: 3px solid #5e6ad2;
+}
+
+/* ICON */
+.notification-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* COLORS */
+.bg-success-subtle { background: rgba(46,184,114,.15); }
+.bg-warning-subtle { background: rgba(252,163,17,.15); }
+.bg-danger-subtle  { background: rgba(230,57,70,.15); }
+.bg-info-subtle    { background: rgba(58,134,255,.15); }
+
+.text-success { color: #2eb872; }
+.text-warning { color: #fca311; }
+.text-danger  { color: #e63946; }
+.text-info    { color: #3a86ff; }

@@ -1,0 +1,137 @@
+<h4 page-title class="m-0 fw-bold mb-4">الشكاوى والمقترحات</h4>
+
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+
+    <!-- FORM -->
+    <div class="custom-card">
+      <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+        <div class="card-icon bg-light text-secondary"
+             style="width:50px;height:50px;font-size:1.2rem">
+          <i class="fas fa-envelope-open-text"></i>
+        </div>
+        <div>
+          <h5 class="fw-bold m-0">نموذج التواصل</h5>
+          <small class="text-muted">نحن هنا لسماع صوتك</small>
+        </div>
+      </div>
+
+      <form (ngSubmit)="submit()">
+
+        <!-- TYPE -->
+        <div class="mb-3">
+          <label class="form-label fw-medium">نوع الرسالة</label>
+          <div class="d-flex gap-4">
+            <label class="form-check">
+              <input type="radio" class="form-check-input"
+                     [(ngModel)]="form.type" name="type" value="شكوى">
+              شكوى
+            </label>
+            <label class="form-check">
+              <input type="radio" class="form-check-input"
+                     [(ngModel)]="form.type" name="type" value="اقتراح">
+              اقتراح
+            </label>
+            <label class="form-check">
+              <input type="radio" class="form-check-input"
+                     [(ngModel)]="form.type" name="type" value="استفسار">
+              استفسار
+            </label>
+          </div>
+        </div>
+
+        <!-- LOCATION -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <label class="form-label fw-medium">المحافظة</label>
+            <select class="form-select form-control-custom"
+                    [(ngModel)]="form.governorate" name="gov">
+              <option disabled selected>اختر المحافظة</option>
+              <option *ngFor="let g of governorates">{{ g }}</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label fw-medium">المديرية</label>
+            <select class="form-select form-control-custom"
+                    [(ngModel)]="form.district" name="district">
+              <option disabled selected>اختر المديرية</option>
+              <option *ngFor="let d of districts">{{ d }}</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label fw-medium">الفرع</label>
+            <select class="form-select form-control-custom"
+                    [(ngModel)]="form.branch" name="branch">
+              <option disabled selected>اختر الفرع</option>
+              <option>المركز الرئيسي</option>
+              <option>حي الروضة</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- SUBJECT -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label fw-medium">رقم المعاملة</label>
+            <input class="form-control form-control-custom"
+                   [(ngModel)]="form.ref"
+                   name="ref">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label fw-medium">عنوان الرسالة</label>
+            <input class="form-control form-control-custom"
+                   [(ngModel)]="form.subject"
+                   name="subject">
+          </div>
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="mb-3">
+          <label class="form-label fw-medium">نص الرسالة</label>
+          <textarea rows="5"
+                    class="form-control form-control-custom"
+                    [(ngModel)]="form.message"
+                    name="message"></textarea>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-primary-custom px-5">إرسال</button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="custom-card mt-5">
+      <h5 class="fw-bold mb-3">سجل الشكاوى السابقة</h5>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>الرقم</th>
+            <th>الموضوع</th>
+            <th>الحالة</th>
+            <th>التاريخ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of history">
+            <td class="fw-bold">{{ c.id }}</td>
+            <td>{{ c.subject }}</td>
+            <td>
+              <span class="status-badge"
+                    [ngClass]="statusClass(c.status)">
+                {{ c.status }}
+              </span>
+            </td>
+            <td class="text-muted">{{ c.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

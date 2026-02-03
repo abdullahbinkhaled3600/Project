@@ -1,0 +1,43 @@
+<h4 page-title class="m-0 fw-bold mb-4">مركز الإشعارات</h4>
+
+<div class="d-flex justify-content-end mb-3">
+  <button
+    class="btn btn-sm btn-outline-secondary"
+    (click)="markAllAsRead()">
+    تحديد الكل كمقروء
+  </button>
+</div>
+
+<div class="custom-card p-0 overflow-hidden">
+
+  <div
+    class="notif-item p-4 border-bottom"
+    *ngFor="let n of notifications"
+    [class.unread]="n.unread"
+    (click)="markAsRead(n)">
+
+    <div class="d-flex gap-3">
+      <div class="notification-icon" [ngClass]="getIconClass(n.type)">
+        <i class="fas" [ngClass]="getIcon(n.type)"></i>
+      </div>
+
+      <div class="flex-grow-1">
+        <div class="d-flex justify-content-between mb-1">
+          <h6 class="fw-bold m-0">{{ n.title }}</h6>
+          <small class="text-muted">{{ n.time }}</small>
+        </div>
+
+        <p class="text-muted m-0 small">
+          {{ n.message }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="text-center mt-4">
+  <button class="btn btn-link text-muted text-decoration-none">
+    تحميل المزيد...
+  </button>
+</div>

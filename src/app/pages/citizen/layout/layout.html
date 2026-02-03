@@ -1,0 +1,90 @@
+<div class="layout-root">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" [class.active]="sidebarOpen">
+    <div class="sidebar-brand">
+      <i class="fas fa-landmark"></i>
+      <span>بوابة المواطن</span>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li>
+        <a routerLink="/citizen/dashboard" routerLinkActive="active">
+          <i class="fas fa-home"></i> لوحة التحكم
+        </a>
+      </li>
+
+
+      <li>
+        <a routerLink="/citizen/services" routerLinkActive="active">
+          <i class="fas fa-concierge-bell"></i> الخدمات الإلكترونية
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/citizen/my-requests" routerLinkActive="active">
+          <i class="fas fa-file-alt"></i> طلباتي
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/citizen/booking" routerLinkActive="active">
+          <i class="fas fa-calendar-check"></i> حجز موعد
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/citizen/notifications" routerLinkActive="active">
+          <i class="fas fa-bell"></i> الإشعارات
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/citizen/complaints" routerLinkActive="active">
+          <i class="fas fa-exclamation-circle"></i> الشكاوى والمقترحات
+        </a>
+      </li>
+            <li>
+        <a routerLink="/citizen/profile" routerLinkActive="active">
+          <i class="fas fa-cog"></i> الإعدادات
+        </a>
+      </li>
+
+      <li>
+        <a class="text-danger" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i> تسجيل خروج
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <i class="fas fa-bars menu-toggle" (click)="toggleSidebar()"></i>
+        <ng-content select="[page-title]"></ng-content>
+      </div>
+
+      <div class="header-right">
+        <button class="notif-btn">
+          <i class="fas fa-bell"></i>
+          <span class="notify-dot"></span>
+        </button>
+
+        <img
+          src="https://ui-avatars.com/api/?name=User+Name&background=5e6ad2&color=fff"
+          class="avatar">
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <section class="page-content">
+      <router-outlet></router-outlet>
+    </section>
+
+  </main>
+
+</div>

@@ -1,0 +1,146 @@
+<h4 page-title class="m-0 fw-bold mb-4">تعديل الملف الشخصي</h4>
+
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+
+    <div class="custom-card">
+
+      <!-- HEADER -->
+      <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+        <div class="card-icon">
+          <i class="fas fa-user-edit"></i>
+        </div>
+        <div>
+          <h5 class="fw-bold m-0">تحديث البيانات الشخصية</h5>
+          <small class="text-muted">تأكد من صحة البيانات المدخلة قبل الحفظ</small>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <form (ngSubmit)="save()">
+
+        <div class="row g-4">
+
+          <div class="col-md-6">
+            <label class="form-label">الاسم الكامل</label>
+            <input
+              type="text"
+              class="form-control form-control-custom"
+              [(ngModel)]="profile.name"
+              name="name">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">رقم الهوية الوطنية</label>
+            <input
+              type="text"
+              class="form-control form-control-custom readonly"
+              [(ngModel)]="profile.nationalId"
+              name="nationalId"
+              readonly>
+            <small class="text-muted">لا يمكن تعديل رقم الهوية</small>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">رقم الهاتف</label>
+            <input
+              type="tel"
+              class="form-control form-control-custom"
+              [(ngModel)]="profile.phone"
+              name="phone">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">البريد الإلكتروني</label>
+            <input
+              type="email"
+              class="form-control form-control-custom"
+              [(ngModel)]="profile.email"
+              name="email">
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="col-12">
+            <h6 class="fw-bold text-primary mt-3 border-bottom pb-2">كلمة المرور</h6>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">كلمة المرور الحالية</label>
+            <input
+              type="password"
+              class="form-control form-control-custom"
+              [(ngModel)]="profile.currentPassword"
+              name="currentPassword">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">كلمة المرور الجديدة</label>
+            <input
+              type="password"
+              class="form-control form-control-custom"
+              [(ngModel)]="profile.newPassword"
+              name="newPassword">
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">تأكيد كلمة المرور</label>
+            <input
+              type="password"
+              class="form-control form-control-custom"
+              [(ngModel)]="profile.confirmPassword"
+              name="confirmPassword">
+          </div>
+
+          <!-- LOCATION -->
+          <div class="col-md-4">
+            <label class="form-label">المحافظة</label>
+            <select
+              class="form-select form-control-custom"
+              [(ngModel)]="profile.governorate"
+              name="governorate">
+              <option disabled value="">اختر المحافظة</option>
+              <option *ngFor="let g of governorates">{{ g }}</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">المديرية</label>
+            <select
+              class="form-select form-control-custom"
+              [(ngModel)]="profile.district"
+              name="district">
+              <option disabled value="">اختر المديرية</option>
+              <option *ngFor="let d of districts">{{ d }}</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">الدولة</label>
+            <input
+              type="text"
+              class="form-control form-control-custom"
+              [(ngModel)]="profile.country"
+              name="country">
+          </div>
+
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="d-flex justify-content-center gap-3 mt-5 pt-3 border-top">
+          <button type="button"
+                  class="btn btn-outline-secondary px-5 rounded-pill"
+                  (click)="cancel()">
+            إلغاء
+          </button>
+
+          <button type="submit"
+                  class="btn btn-primary-custom px-5 rounded-pill">
+            حفظ التغييرات
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>

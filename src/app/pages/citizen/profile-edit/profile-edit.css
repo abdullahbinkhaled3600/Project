@@ -1,0 +1,64 @@
+:host {
+  display: block;
+}
+
+/* CARD */
+.custom-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+
+/* ICON */
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(94,106,210,.12);
+  color: #5e6ad2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* FORM */
+.form-label {
+  font-weight: 600;
+  font-size: .85rem;
+}
+
+.form-control-custom,
+.form-select {
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  transition: .2s;
+}
+
+.form-control-custom:focus,
+.form-select:focus {
+  background: #fff;
+  border-color: #5e6ad2;
+  box-shadow: 0 0 0 3px rgba(94,106,210,.15);
+}
+
+.readonly {
+  background: #f0f0f0 !important;
+  cursor: not-allowed;
+}
+
+/* BUTTON */
+.btn-primary-custom {
+  background: #5e6ad2;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  padding: 12px 26px;
+}
+
+.btn-primary-custom:hover {
+  background: #4b55a8;
+}

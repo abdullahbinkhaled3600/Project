@@ -1,0 +1,123 @@
+/* ================= PAGE SCOPE ================= */
+:host {
+  display: block;
+}
+
+/* ================= CARD ================= */
+.custom-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+
+/* ================= HEADER ================= */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* ================= FORM ================= */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.form-control-custom,
+.form-select {
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  transition: .2s ease;
+}
+
+.form-control-custom:focus,
+.form-select:focus {
+  background: #fff;
+  border-color: #5e6ad2;
+  box-shadow: 0 0 0 3px rgba(94,106,210,.15);
+}
+
+/* ================= RADIO ================= */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+.form-check-label {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ================= BUTTON ================= */
+.btn-primary-custom {
+  background: #5e6ad2;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 28px;
+  border: none;
+  transition: .2s ease;
+}
+
+.btn-primary-custom:hover {
+  background: #4b55a8;
+}
+
+/* ================= TABLE ================= */
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.custom-table thead th {
+  font-weight: 500;
+  color: #8d99ae;
+  padding: 12px;
+}
+
+.custom-table tbody tr {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.04);
+}
+
+.custom-table td {
+  padding: 16px 14px;
+}
+
+.custom-table td:first-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.custom-table td:last-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+/* ================= STATUS ================= */
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: .85rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-processing {
+  background: rgba(58,134,255,.12);
+  color: #3a86ff;
+}
+
+.status-completed {
+  background: rgba(46,184,114,.12);
+  color: #2eb872;
+}

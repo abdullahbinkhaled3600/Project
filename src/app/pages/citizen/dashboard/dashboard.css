@@ -1,0 +1,81 @@
+.custom-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(94, 106, 210, 0.1);
+  color: #5e6ad2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.card-icon.success {
+  background: rgba(46, 184, 114, 0.15);
+  color: #2eb872;
+}
+
+.card-icon.warning {
+  background: rgba(252, 163, 17, 0.15);
+  color: #fca311;
+}
+
+.stat-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #8d99ae;
+}
+
+.custom-table {
+  width: 100%;
+  border-spacing: 0 10px;
+  border-collapse: separate;
+}
+
+.custom-table th {
+  color: #8d99ae;
+  font-weight: 500;
+}
+
+.custom-table td {
+  background: #fff;
+  padding: 15px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.status-processing {
+  background: rgba(58, 134, 255, 0.1);
+  color: #3a86ff;
+}
+
+.status-completed {
+  background: rgba(46, 184, 114, 0.1);
+  color: #2eb872;
+}
+
+.status-rejected {
+  background: rgba(230, 57, 70, 0.1);
+  color: #e63946;
+}
+
+.notification-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
