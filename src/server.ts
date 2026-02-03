@@ -5,17 +5,24 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
+<<<<<<< HEAD
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const browserDistFolder = join(__dirname, '../browser');
+=======
+import { join } from 'node:path';
+
+const browserDistFolder = join(import.meta.dirname, '../browser');
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
 /**
+<<<<<<< HEAD
  * إضافة CSP header مخصصة للتطوير
  */
 app.use((req, res, next) => {
@@ -57,6 +64,8 @@ app.use(
 );
 
 /**
+=======
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
  *
@@ -69,6 +78,20 @@ app.use(
  */
 
 /**
+<<<<<<< HEAD
+=======
+ * Serve static files from /browser
+ */
+app.use(
+  express.static(browserDistFolder, {
+    maxAge: '1y',
+    index: false,
+    redirect: false,
+  }),
+);
+
+/**
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
  * Handle all other requests by rendering the Angular application.
  */
 app.use((req, res, next) => {
@@ -92,11 +115,18 @@ if (isMainModule(import.meta.url) || process.env['pm_id']) {
     }
 
     console.log(`Node Express server listening on http://localhost:${port}`);
+<<<<<<< HEAD
     console.log(`CSP is ${process.env['NODE_ENV'] === 'production' ? 'enabled for production' : 'configured for development'}`);
+=======
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
   });
 }
 
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
+<<<<<<< HEAD
 export const reqHandler = createNodeRequestHandler(app);
+=======
+export const reqHandler = createNodeRequestHandler(app);
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e

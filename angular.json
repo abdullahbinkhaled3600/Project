@@ -5,6 +5,10 @@
   "projects": {
     "Project": {
       "projectType": "application",
+<<<<<<< HEAD
+=======
+      "schematics": {},
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,6 +17,7 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+<<<<<<< HEAD
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -38,6 +43,29 @@
               "extractLicenses": true,
               "sourceMap": false,
               "outputHashing": "all",
+=======
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
               "budgets": [
                 {
                   "type": "initial",
@@ -49,7 +77,12 @@
                   "maximumWarning": "4kB",
                   "maximumError": "8kB"
                 }
+<<<<<<< HEAD
               ]
+=======
+              ],
+              "outputHashing": "all"
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
             },
             "development": {
               "optimization": false,
@@ -57,16 +90,28 @@
               "sourceMap": true
             }
           },
+<<<<<<< HEAD
           "defaultConfiguration": "development"
+=======
+          "defaultConfiguration": "production"
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
         },
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
+<<<<<<< HEAD
             "development": {
               "buildTarget": "Project:build:development"
             },
             "production": {
               "buildTarget": "Project:build:production"
+=======
+            "production": {
+              "buildTarget": "Project:build:production"
+            },
+            "development": {
+              "buildTarget": "Project:build:development"
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
             }
           },
           "defaultConfiguration": "development"
@@ -77,6 +122,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+<<<<<<< HEAD
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
@@ -94,13 +140,31 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+=======
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
             ]
           }
         }
       }
     }
+<<<<<<< HEAD
   },
   "cli": {
     "analytics": false
+=======
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
   }
 }

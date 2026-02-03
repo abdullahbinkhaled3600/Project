@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+<<<<<<< HEAD
 import { Layout } from './pages/citizen/layout/layout';
 import { CitizenDashboardComponent } from './pages/citizen/dashboard/dashboard';
 import { CitizenProfileComponent } from './pages/citizen/profile/profile';
@@ -71,3 +72,6 @@ export const routes: Routes = [
     redirectTo: 'citizen'
   }
 ];
+=======
+export const routes: Routes = [];
+>>>>>>> be4b7da094c94fa358f5d0808f72674ff4380d5e
